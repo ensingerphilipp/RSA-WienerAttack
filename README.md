@@ -1,5 +1,6 @@
 # Wiener´s Attack on RSA
 This tool aims to crack RSA private Keys implementing the Attack by Michael J. Wiener.
+Tested with Python 3.8
 
 ## CommandLine Arguments:
 Define the Console Parameters by specifing the RSA public key using its parameters:  
