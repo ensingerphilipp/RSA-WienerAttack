@@ -8,12 +8,12 @@ def main(argv):
     try:
         opts, args = getopt.getopt(argv, "hn:e:")
     except getopt.GetoptError:
-        print 'WienerAttackRSA.py -n <12345> -e <12345>'
+        print("WienerAttackRSA.py -n <12345> -e <12345>")
         sys.exit(2)
     for opt, arg in opts:
         if opt == '-h':
-            print 'wienerRSAcrack.py -n <12345> -e <12345>'
-            print 'Example: WienerAttackRSA.py -n 90581 -e 17993'
+            print("wienerRSAcrack.py -n <12345> -e <12345>")
+            print("Example: WienerAttackRSA.py -n 90581 -e 17993")
             sys.exit()
         elif opt == '-n':
             n = int(arg)
@@ -32,7 +32,7 @@ def runWiener(n, e):
 
     while i < len(continuedFraction):
         if (B[i] % 2) == 1:
-            C = (e * B[i] - 1) / A[i]
+            C = (e * B[i] - 1) // A[i]
             if isInt(C):
                 solution = solveEquation(n, C)
                 p = solution[0]
@@ -52,7 +52,7 @@ def runWiener(n, e):
 
 
 def isInt(x):
-    return isinstance(x, (int, long))
+    return isinstance(x, int)
 
 
 def solveEquation(n, C):
